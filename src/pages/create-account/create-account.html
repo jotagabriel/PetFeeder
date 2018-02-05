@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Criar conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background" text-center>
+  <ion-grid>
+    <!-- linha01 -->
+    <ion-row col-12></ion-row>
+    <!-- linha02 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <button class="btnFace" ion-button block color="facebook" (click)="createWithFace()">
+          <ion-col col-3 col-sm-4>
+            <ion-icon class="icoFace" name="logo-facebook"></ion-icon>
+          </ion-col>
+          <ion-col class="label labelBtn" col-9 col-sm-8>
+            <span>Criar com o Facebook</span>
+          </ion-col>
+        </button>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- linha03 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <button class="btnGoogle" ion-button block color="googleplus" (click)="createWithGoogle()">
+          <ion-col col-3 col-sm-4>
+            <ion-icon class="icoGoogle" name="logo-googleplus"></ion-icon>
+          </ion-col>
+          <ion-col class="label labelBtn" col-9 col-sm-8>
+            <span>Criar com o Google</span>
+          </ion-col>
+        </button>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- linha04 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <p class="label"> ————— <span padding-right padding-left> ou </span> ————— </p>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- Criar e validar o formulario de incrição-->
+    <form #form="ngForm" novalidate>
+      <!-- linha05 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <ion-input required class="input" type="text" placeholder="Nome"></ion-input>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha06 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <ion-input required [(ngModel)]="user.mail" #mail="ngModel" name="mail" class="input" type="email" placeholder="E-mail"></ion-input>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha07 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <ion-input required [(ngModel)]="user.password" #password="ngModel" name="password" class="input" type="password" placeholder="Senha"></ion-input>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha08 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <ion-select required class="input" placeholder="Gênero"> 
+            <ion-option value="F">Feminino</ion-option>
+            <ion-option value="M">Masculino</ion-option>            
+          </ion-select>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha09 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <ion-datetime required class="input" placeholder="Data de nascimento" displayFormat="DD/MM/YYYY"></ion-datetime>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha10 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <button class="btnDefault" ion-button block color="button" (click)="createWithMail()">
+            <ion-col col-3 col-sm-4>
+              <ion-icon class="icoDefault" name="ios-checkbox-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="label labelBtn" col-9 col-sm-8>
+              <span>Criar nova conta</span>
+            </ion-col>
+          </button>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

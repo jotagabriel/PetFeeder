@@ -1,0 +1,103 @@
+.imgProfile {
+    min-height: 30%;
+    min-width: 60%;
+    margin-top: 10%;
+    border-radius: 50%;
+}
+
+.nameUser {
+    font-size: 120%;
+}
+
+.background {
+    background-color: color($colors, dark, base)!important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.label {
+    font-size: 15px!important;
+    color: color($colors, light, base)!important;
+    text-transform: initial!important;
+}
+
+.labelDark {
+    font-size: 17px!important;
+    color: color($colors, dark, base)!important;
+    text-transform: initial!important;
+}
+
+.labelBtn {
+    text-align: left;
+}
+
+.input {
+    //background-color: color($colors, button02, base)!important;
+    padding-left: 10px;
+    border: 1px solid color($colors, light, base)!important;
+    color: color($colors, light, base)!important;
+    *::-webkit-input-placeholder{
+        color: color($colors, light, base)!important;
+        font-size: 15px;
+    }
+}
+
+.datetime-text{
+    *::-webkit-input-placeholder{
+        color: color($colors, light, base)!important;
+        font-size: 15px;
+    }
+    color: color($colors, light, base)!important;
+    text-align: left;
+    
+}
+
+ion-select {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    text-align: left;
+    *::-webkit-input-placeholder{
+        color: color($colors, light, base)!important;
+        font-size: 15px;
+    }
+    color: color($colors, light, base)!important;
+}
+
+.select-text{
+    *::-webkit-input-placeholder{
+        color: color($colors, light, base)!important;
+        font-size: 15px;
+    }
+    color: color($colors, light, base)!important;
+}
+
+.btnFace, .btnGoogle, .btnDefault {
+    font-size: 15px!important;
+    color: color($colors, light, base)!important;
+    text-transform: initial!important;
+    text-align: center;
+    margin: 0%;
+}
+
+.icoDefault, .icoFace, .icoGoogle {
+    color: color($colors, light, base)!important;
+    font-size: 25px;
+}
+
+.icoDefaultDark {
+    color: color($colors, dark, base)!important;
+    font-size: 25px;
+}
+
+.toolbar-background {
+    background-color: color($colors, button, base)!important;
+    color: color($colors, light, base)!important;
+    //background-color: transparent!important;
+  }
+
+.toolbar-title {
+    color: color($colors, light, base)!important;
+}
+
+.bar-button {
+    color: color($colors, light, base)!important;
+}

@@ -1,0 +1,121 @@
+<ion-content class="background" text-center>
+  <ion-grid>
+    <!-- linha 01 -->
+    <ion-row col-12 padding></ion-row>
+    <!-- linha 02 -->
+    <ion-row col-12 padding></ion-row>
+    <!-- linha 03 -->
+    <ion-row justify-content-center align-items-center col-12 >
+      <ion-img no-padding src="/assets/imgs/logo.png" id="logo" width="140" height="65"></ion-img>
+    </ion-row>
+    <!-- linha 04 -->
+    <ion-row col-12 padding></ion-row>
+    <!-- linha 05 -->
+    <ion-row col-12 padding></ion-row>
+    <!-- linha 06 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <p class="label">Já possui uma conta? Faça login!</p>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- linha 07 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <button class="btnDefault" ion-button block color="button" (click)="showLoginWithMail()">
+          <ion-col col-3 col-sm-4>
+            <ion-icon class="icoDefault" name="ios-mail-outline"></ion-icon>
+          </ion-col>
+          <ion-col class="label labelBtn" col-9 col-sm-8>
+            <span>Login com o e-mail</span>
+          </ion-col>
+        </button>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- Formulario par login com email -->
+    <form #form="ngForm" novalidate>
+      <!-- linha 08 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <!-- Campo pra logar com o email -->
+          <ion-input *ngIf="showLogWithMailMail" required [(ngModel)]="user.mail" #mail="ngModel" name="mail" class="input" type="email" placeholder="E-mail"></ion-input>
+          <!-- Botao de login com Face -->
+          <button  *ngIf="showLogWithSocial" class="btnFace" ion-button block color="facebook" (click)="loginWithFace()">
+            <ion-col col-3 col-sm-4>
+              <ion-icon class="icoFace" name="logo-facebook"></ion-icon>
+            </ion-col>
+            <ion-col class="label labelBtn" col-9 col-sm-8>
+              <span>Login com o Facebook</span>
+            </ion-col>
+          </button>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+      <!-- linha 09 -->
+      <ion-row>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+        <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+          <!-- Campo pra logar com o email -->
+          <ion-input *ngIf="showLogWhithMailPass" required [(ngModel)]="user.password" #password="ngModel" name="password" class="input" type="password" placeholder="Senha"></ion-input>
+          <!-- Campo pra recuperar a senha -->
+          <ion-input *ngIf="showRecoverPass" required [(ngModel)]="userMail" #email="ngModel" name="email" class="input" type="email" placeholder="Confirme o e-mail"></ion-input>
+          <!-- Campo pra logar com o Google -->
+          <button *ngIf="showLogWithSocial" class="btnGoogle" ion-button block color="googleplus" (click)="loginWithGoogle()">
+            <ion-col col-3 col-sm-4>
+              <ion-icon class="icoGoogle" name="logo-googleplus"></ion-icon>
+            </ion-col>
+            <ion-col class="label labelBtn" col-9 col-sm-8>
+              <span>Login com o Google</span>
+            </ion-col>
+          </button>
+        </ion-col>
+        <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      </ion-row>
+    </form>
+    <!-- linha 10 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <!-- Recuperar senha -->
+        <button *ngIf="showRecoverPass" class="btnDefault" ion-button block color="button" (click)="recoverPass()">
+          <ion-col col-3 col-sm-4>
+            <ion-icon class="icoDefault" name="ios-lock-outline"></ion-icon>
+          </ion-col>
+          <ion-col class="label labelBtn" col-9 col-sm-8>
+            <span>Recuperar</span>
+          </ion-col>
+        </button>
+        <!-- Entrar com email -->
+        <button *ngIf="showLogWhithMailPass" class="btnDefault" ion-button block color="button" (click)="loginWithMail()">
+          <ion-col col-3 col-sm-4>
+            <ion-icon class="icoDefault" name="ios-log-in-outline"></ion-icon>
+          </ion-col>
+          <ion-col class="label labelBtn" col-9 col-sm-8>
+            <span>Entrar</span>
+          </ion-col>
+        </button>
+        <!-- Inicial -->
+        <p *ngIf="showLogWithSocial" class="label"> ————— <span padding-right padding-left> ou </span> ————— </p>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+    <!-- linha 11 -->
+    <ion-row>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+      <ion-col col-10 col-sm-8 col-md-6 col-lg-4>
+        <!-- Campo do recuperar senha -->
+        <p *ngIf="showRecoverPass" class="label" >Voce receberá um link no email informado, contendo instruções!</p>
+        <!-- Campo pra recuperar senha -->
+        <p *ngIf="showLogWhithMailPass" class="label" (click)="showRecPass()">Esqueceu sua senha? Recupere-a!</p>
+        <!-- Campo pra criar nova conta -->
+        <p *ngIf="showLogWithSocial" class="label" (click)="createAccount()">Não possui uma conta? Crie uma!</p>
+      </ion-col>
+      <ion-col col-1 col-sm-2 col-md-3 col-lg-4></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+  

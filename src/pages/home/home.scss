@@ -1,0 +1,9 @@
+page-home {
+    .lamp {
+        font-size: 50px;
+        color: color($colors, dark, base)!important;
+        height: 90px;
+        margin-top: 60%;
+        border: 1px solid color($colors, dark, base)!important;;
+    }
+}

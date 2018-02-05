@@ -1,0 +1,8 @@
+{
+  "name": "PetFeeder",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
